@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import urllib.request as request
@@ -14,19 +14,19 @@ import sys
 import pathlib
 
 
-# In[2]:
+# In[ ]:
 
 
 TRACK_FILE = pathlib.Path('lel.track')
 
 
-# In[3]:
+# In[ ]:
 
 
 get_text = operator.methodcaller('get_text')
 
 
-# In[4]:
+# In[ ]:
 
 
 class Day:
@@ -63,7 +63,7 @@ class Day:
         return remove_tab(remove_linebreak(get_text(html_element)))
 
 
-# In[5]:
+# In[ ]:
 
 
 class Event:
@@ -75,7 +75,7 @@ class Event:
         return f'{self.time}: {self.action}'
 
 
-# In[6]:
+# In[ ]:
 
 
 def get_days(soup):
@@ -83,14 +83,14 @@ def get_days(soup):
     return map(Day.from_soup, days)
 
 
-# In[7]:
+# In[ ]:
 
 
 def minutes(n):
     return 60 * n
 
 
-# In[8]:
+# In[ ]:
 
 
 def show_tracking_data(tracking_number):
@@ -102,7 +102,7 @@ def show_tracking_data(tracking_number):
     print('\n\n'.join(map(str,days)))
 
 
-# In[9]:
+# In[ ]:
 
 
 def main():
@@ -120,7 +120,7 @@ def main():
         time.sleep(minutes(5))    
 
 
-# In[10]:
+# In[ ]:
 
 
 def get_tracking_number():
@@ -133,7 +133,7 @@ def get_tracking_number():
     #if there is a track file
     if not tracking_number and TRACK_FILE.is_file():
         #check if there is a tracking number in the track file
-        tracking_number = TRACK_FILE.read_text()
+        tracking_number = TRACK_FILE.read_text().strip()
     
     #if there is an argument passed in to this script
     #or there is a non-empty track file.
