@@ -1,4 +1,7 @@
-# LEL Express Tracker
+# LEL Express Tracker (DEPRECATED)
+
+***This package has been deprecated. https://tracker.lel.asia/ is no
+longer available so the program will not work anymore.***
 
 Track the status of your LEL Express (Lazada eLogistics) packages.
 
